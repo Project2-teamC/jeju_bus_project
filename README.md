@@ -104,3 +104,12 @@
 
 ----------
 ## 📌 6. 참고 자료
+* 퇴근시간 버스승차인원 예측 경진대회 - DACON (<a href="https://dacon.io/competitions/official/229255/data" target="_blank">링크</a>)
+* 통계청 주민등록 인구현황 행정구역(시군구)별 주민등록세대수의 5년치 통계
+* 한국관광데이터랩 제주특별자치도 방문자수 추이
+* 제주 버스-노선 2배로 늘었지만 교통 분담률 '10년째 제자리'|제주소리 (<a href="http://www.jejusori.net/news/articleView.html?idxno=405628" target="_blank">링크</a>)
+* 제주도, 버스 준공영제 문제점 정밀진단…개선 속도 낸다|뉴스로 (<a href="https://www.newsro.kr/%EC%A0%9C%EC%A3%BC%EB%8F%84-%EB%B2%84%EC%8A%A4-%EC%A4%80%EA%B3%B5%EC%98%81%EC%A0%9C-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EC%A0%95%EB%B0%80%EC%A7%84%EB%8B%A8%EA%B0%9C%EC%84%A0-%EC%86%8D%EB%8F%84-%EB%82%B8%EB%8B%A4/" target="_blank">링크</a>)
+* 4차 제주도 대중교통계획안에 뭐가 담겼나|제주일보 (<a href="https://www.jejunews.com/news/articleView.html?idxno=2194390" target="_blank">링크</a>)
+* 효율성 떨어지는 제주 대중교통? 각종 불편사항도 산재|미디어제주 (<a href="http://www.mediajeju.com/news/articleView.html?idxno=339254" target="_blank">링크</a>)
+* 케이웨더(kweather.co.kr)>기상청>과거날씨 (<a href="https://www.kweather.co.kr/kma/kma_past.html" target="_blank">링크</a>)
+*  과거태풍 > 태풍 > 기상플러스 (<a href="https://www.weather.go.kr/plus/typ/typ_history.jsp" target="_blank">링크</a>)
