@@ -81,8 +81,31 @@
 ## (1) 오토 머신러닝 [PyCaret]
 PyCaret은 파이썬의 오픈 소스, 로우 코드 머신러닝 라이브러리로서 머신 러닝 워크플로우를 자동화합니다. 실험 주기의 속도를 기하급수적으로 높이고 생산성을 높이는 end-to-end 머신러닝 및 모델 관리 도구입니다.</br>
 다른 오픈 소스 머신 러닝 라이브러리와 비교했을 때, PyCaret은 수백 줄의 코드를 몇 줄로만 대체하는 데 사용할 수 있는 대체 로우 코드 라이브러리입니다. </br>
-PyCaret은 본질적으로 skickit-learn, XGBoost, LightGBM, CatBoost, spaCy, Optuna, Hyperopt, Ray 등과 같은 여러 머신러닝 라이브러리와 프레임워크에 대한 파이썬 래퍼(wrapper함수) 입니다.
+PyCaret은 본질적으로 skickit-learn, XGBoost, LightGBM, CatBoost, spaCy, Optuna, Hyperopt, Ray 등과 같은 여러 머신러닝 라이브러리와 프레임워크에 대한 파이썬 래퍼(wrapper함수) 입니다.</br>
 
+***모델 사용코드***</br>
+```python
+# 여러개의 머신러닝 모델을 한 번에 비교하는 코드
+best_models = compare_models(n_select=3, sort='RMSE')
+# n_select는 사용할 파라미터의 갯수
+```
+```python
+# 상위 3개의 모델을 블랜딩해서 앙상블을 만들 수 있는 코드
+blend_models = blend_models(estimator_list = [모델1, 모델2, 모델3])
+```
+```python
+# 만든 모델을 훈련시키는 코드
+final_model = finalize_model(blend_models)
+```
+```python
+# 훈련된 모델로 값(Label)을 예측하는 코드
+prediction = predict_model(final_model, data = test_x)
+```
+```python
+# 결과 값을 plot으로 보기 위한 코드
+plot_model(만든 모델, plot = '플롯 정보')
+```
+<br></br>
 ## (2) 사용한 모델 선정
 ![image](https://user-images.githubusercontent.com/77037338/184921205-18706e90-be63-4359-b6dd-5f7b6570f338.png)
 
