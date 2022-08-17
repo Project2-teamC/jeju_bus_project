@@ -118,6 +118,6 @@ feature importance를 이용해 제안해볼 수 있다.
 * 4차 제주도 대중교통계획안에 뭐가 담겼나|제주일보 (<a href="https://www.jejunews.com/news/articleView.html?idxno=2194390" target="_blank">링크</a>)
 * 효율성 떨어지는 제주 대중교통? 각종 불편사항도 산재|미디어제주 (<a href="http://www.mediajeju.com/news/articleView.html?idxno=339254" target="_blank">링크</a>)
 * 케이웨더(kweather.co.kr)>기상청>과거날씨 (<a href="https://www.kweather.co.kr/kma/kma_past.html" target="_blank">링크</a>)
-*  과거태풍 > 태풍 > 기상플러스 (<a href="https://www.weather.go.kr/plus/typ/typ_history.jsp" target="_blank">링크</a>)
-*  Pycaret offical blog (<a href="https://pycaret.gitbook.io/docs/learn-pycaret/official-blog" target="_blank">링크</a>)
-*  
+* 과거태풍 > 태풍 > 기상플러스 (<a href="https://www.weather.go.kr/plus/typ/typ_history.jsp" target="_blank">링크</a>)
+* PyCaret (<a href="https://pycaret.readthedocs.io/en/latest/index.html" target="_blank">링크</a>)
+* PyCaret offical blog (<a href="https://pycaret.gitbook.io/docs/learn-pycaret/official-blog" target="_blank">링크</a>)
