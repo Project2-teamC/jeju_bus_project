@@ -83,13 +83,16 @@
 
 
 ----------
-# 📉 4. PyCaret을 이용한 모델 선정
+# 📉 4. Pyaret을 이용한 모델 선정
 ## (1) 오토 머신러닝 [PyCaret]
 PyCaret은 파이썬의 오픈 소스, 로우 코드 머신러닝 라이브러리로서 머신 러닝 워크플로우를 자동화합니다. 실험 주기의 속도를 기하급수적으로 높이고 생산성을 높이는 end-to-end 머신러닝 및 모델 관리 도구입니다.</br>
 다른 오픈 소스 머신 러닝 라이브러리와 비교했을 때, PyCaret은 수백 줄의 코드를 몇 줄로만 대체하는 데 사용할 수 있는 대체 로우 코드 라이브러리입니다. </br>
 PyCaret은 본질적으로 skickit-learn, XGBoost, LightGBM, CatBoost, spaCy, Optuna, Hyperopt, Ray 등과 같은 여러 머신러닝 라이브러리와 프레임워크에 대한 파이썬 래퍼(wrapper함수) 입니다.</br>
 
 ***모델 사용코드***</br>
+```python
+from pycaret.regression import *
+```
 ```python
 # 여러개의 머신러닝 모델을 한 번에 비교하는 코드
 best_models = compare_models(n_select=3, sort='RMSE')
@@ -116,20 +119,34 @@ plot_model(만든 모델, plot = '플롯 정보')
 ![image](https://user-images.githubusercontent.com/77037338/184921205-18706e90-be63-4359-b6dd-5f7b6570f338.png)</br>
 
 피쳐를 생성 후 오토머신러닝 라이브러리인 PyCaret을 이용하여 다양한 모델의 결과를 얻고, 이 중 RMSE 기준 Top3 모델을 뽑아 더 높은 성능을 가진 모델을 만들기 위해
-앙상블 모델을 만들었고, 이 때 블랜딩하는 방식은 앙상블 기법 중 소프트 보팅을 사용하였습니다. 이를 통해 나온 피쳐별 최종 모델의 성능을 비교하였습니다.
+앙상블 모델을 만들었고, 이 때 블랜딩하는 방식은 앙상블 기법 중 소프트 보팅을 사용하였습니다. 이를 통해 나온 피쳐별 최종 모델의 성능을 비교하였습니다.</br>
 
 ## (3) 모델 성능 비교
 ### [1] Feature1 사용
-![image](https://user-images.githubusercontent.com/77037338/185044551-f714640c-bf07-4d67-b0b4-ff4ae21deb5b.png)
-![image](https://user-images.githubusercontent.com/77037338/185045250-da4a0821-5a74-4d16-a378-60e16ce3b89b.png)
-![image](https://user-images.githubusercontent.com/77037338/185045315-adda1406-e798-4c04-b880-52663b147ba5.png)
-
+![image](https://user-images.githubusercontent.com/77037338/185044551-f714640c-bf07-4d67-b0b4-ff4ae21deb5b.png)</br>
+RMSE를 기준으로 top3 모델(Catboost, RandomForestRegressor, LightGBM)이 선정되어 앙상블 모델을 만들었습니다.</br>
+![image](https://user-images.githubusercontent.com/77037338/185045250-da4a0821-5a74-4d16-a378-60e16ce3b89b.png)</br>
+![image](https://user-images.githubusercontent.com/77037338/185045315-adda1406-e798-4c04-b880-52663b147ba5.png)</br>
 
 ### [2] Feature2 사용
-![image](https://user-images.githubusercontent.com/77037338/185045429-9cbfb9cd-0816-4b09-a179-63ec6300a9dc.png)
-![image](https://user-images.githubusercontent.com/77037338/185045474-3666fc06-74cf-4b6b-95ee-2326bf24354f.png)
-![image](https://user-images.githubusercontent.com/77037338/185045533-e1deb583-faaa-412e-b71d-be0117fb9691.png)
+![image](https://user-images.githubusercontent.com/77037338/185045429-9cbfb9cd-0816-4b09-a179-63ec6300a9dc.png)</br>
+RMSE를 기준으로 top3 모델(RandomForestRegressor, Catboost, ExtraTrees)이 선정되어 앙상블 모델을 만들었습니다.</br>
+![image](https://user-images.githubusercontent.com/77037338/185045474-3666fc06-74cf-4b6b-95ee-2326bf24354f.png)</br>
+![image](https://user-images.githubusercontent.com/77037338/185045533-e1deb583-faaa-412e-b71d-be0117fb9691.png)</br>
 
+<br></br>
+Feature1과 Feature2의 top3 모델들과 앙상블 모델의 잔차와 예측 에러를 비교한 결과, </br>
+모델의 잔차에서 베스트 모델은 Train과 Test의 정확도가 높고, 그 둘의 정확도 차이가 적은 앙상블 모델입니다.</br>
+예측 에러에서 베스트 모델 또한 실제와 예측에 따른 에러 그래프를 통해 기울기가 1에 더 가깝고, 정확도가 높고, 이상적인 회귀선에 데이터 분산 정도가 작은 앙상블 모델이었습니다.</br>
+따라서 Feature1과 Feature2에서 각각의 앙상블 모델이 최종 모델로 선정되었습니다.</br>
+
+### [3] Feature1과 Feature2에 사용된 최종 모델 비교
+이 둘의 모델들을 비교해보면, 다음과 같습니다.</br>
+![image](https://user-images.githubusercontent.com/77037338/185049815-ccc307b0-72fb-493a-a8fe-20b74e033b5c.png)
+![image](https://user-images.githubusercontent.com/77037338/185055191-d3337e1b-4c61-4acf-95cc-61127fce3bc0.png)
+앞서 본 결과(잔차, 예측 에러)에서 100명 이상일 경우, 예측 오류가 더 많이 나는 것을 확인 할 수 있습니다. 이는 데이터에 100 이상일 때 이상치가 존재한다고 판단해볼 수 있습니다.</br>
+따라서 이상치에 민감한 MSE 값보다 MAE와 MSE의 중간 민감도를 가진 RMSE와 R2(결정계수)를 기준으로 두 모델을 비교하였습니다.</br>
+결과적으로 Feature2와 그에 따른 앙상블 모델이 더 좋은 모델이라고 평가할 수 있었습니다.</br>
 
 <br></br>
 
@@ -137,12 +154,23 @@ plot_model(만든 모델, plot = '플롯 정보')
 ----------
 # ❗ 5. 결론 및 한계, 보완 방법
 ## (1) 결론
-feature importance를 이용해 제안해볼 수 있다.
+Feature별로 중요도를 판단하기 위해 각 모델별로 중요도 그래프를 그려보았습니다.</br>
+![image](https://user-images.githubusercontent.com/77037338/185056654-d31783ec-7b36-480b-a2e1-57d782d1aab0.png)</br>
+이때, bus_route_id(노선정보)가 18~20시에 승차한 인원수에 가장 높은 중요도를 보여주고 있습니다.</br>
+이는 버스 노선에 따라 승객수에 영향을 줄 수 있으므로 노선별의 개선이 필요할 것이라고 보여집니다.</br>
+![image](https://user-images.githubusercontent.com/77037338/185057596-09e01cef-1739-4300-ab24-8b017d312fa7.png)</br>
+위 예측값(Label)에서 보면 특정 노선의 특정 정류장에서 사람들이 많이 타는곳과 거의 타지 않아 (-)값이 나오는 곳들에서는 특히 개선이 필요해보입니다.</br>
+
 ## (2) 한계 및 보완 방법
 ### [1] 한계
-실제로 정답이라고 볼 수 있는 데이터가 없으므로 정답과 얼마나 차이가 나는지를 비교하기가 어려웠다.
+실제로 정답이라고 볼 수 있는 데이터가 없으므로 실제값과 예측값이 얼마나 차이가 나는지를 비교하기가 어려웠습니다.</br>
+현재 데이터는 각 버스 정류장 별로 승차한 인원수는 알고 있지만 버스 노선별로 정류장 순서는 알기 어려워 이러한 데이터가 있었을 경우 더 정확한 버스 혼잡도를 예측할 수 있지 않았을 까 싶습니다.</br>
+예) 301번 버스(bus route_id)가 a->b->c 버스 정류장(statation code) 을 순서로 이동할 경우 a+b에서 승차한 인원수를 알았으면 a+b+c의 값을 알 수 있음.</br>
+
 ### [2] 보완 방법
-실제 데이터를 찾아 볼 수 있다면 좋았을 것입니다.
+실제 데이터를 찾아 볼 수 있다면 좋았을 것입니다.</br>
+정류소 위치별로 지도화해서 노선을 연결해볼 수 있으면, 버스 혼잡도를 좀 더 정확하게 예측할 수 있을거라 판단됩니다.</br>
+모델 같은 경우엔 하이퍼파라미터 튜닝을 했으면 더 좋은 정확도를 보여줄 수 있을 것입니다.</br>
 
 <br></br>
 
