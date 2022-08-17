@@ -1,4 +1,5 @@
 # :bus: 제주 버스 승차인원 예측
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
 
 # 📑 목차
 * [1. 프로젝트 목표](#-1-프로젝트-목표)
