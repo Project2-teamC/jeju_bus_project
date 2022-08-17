@@ -79,6 +79,9 @@
 ----------
 # 📉 4. Pycaret을 이용한 모델 선정
 ## (1) 오토 머신러닝 [Pycaret]
+PyCaret은 파이썬의 오픈 소스, 로우 코드 머신러닝 라이브러리로서 머신 러닝 워크플로우를 자동화합니다. 실험 주기의 속도를 기하급수적으로 높이고 생산성을 높이는 엔드 투 엔드 머신러닝 및 모델 관리 도구입니다.</br>
+다른 오픈 소스 머신 러닝 라이브러리와 비교했을 때, Pycaret은 수백 줄의 코드를 몇 줄로만 대체하는 데 사용할 수 있는 대체 로우 코드 라이브러리입니다. </br>
+Pycaret은 본질적으로 skickit-learn, XGBoost, LightGBM, CatBoost, spaCy, Optuna, Hyperopt, Ray 등과 같은 여러 머신러닝 라이브러리와 프레임워크에 대한 파이썬 래퍼(wrapper함수) 입니다.
 
 ## (2) 사용한 모델 선정
 ![image](https://user-images.githubusercontent.com/77037338/184921205-18706e90-be63-4359-b6dd-5f7b6570f338.png)
