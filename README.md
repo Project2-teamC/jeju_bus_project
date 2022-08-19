@@ -69,7 +69,7 @@
 따라서 평일, 주말, 공휴일로 나눠서 컬럼을 생성하였습니다.</br>
 
 ### [4] 상관관계 분석 후 시간</br>
-![image](https://user-images.githubusercontent.com/104780664/185571663-d305b6c1-7cf6-45cf-9a5f-fa061ef9567c.png)
+![image](https://user-images.githubusercontent.com/104780664/185572793-de4cba5e-9979-498a-8e74-1432b3f71cc8.png)</br>
 앞의 라인차트를 통해 승하차별로 서로 관련이 있을거 같다고 판단하여 승하차별 상관관계를 확인했습니다.</br>
 보시면 승차는 승차끼리 하차는 하차끼리 서로 상관관계가 있는걸로 보입니다. </br>
 저녁 6시에서 8시 사이의 승차 시간 즉, 예측하고자 하는 항목도 오전 시간대들과 상관관계가 있어보입니다.</br>
@@ -84,7 +84,7 @@
 ![image](https://user-images.githubusercontent.com/104780664/185569605-f52a0405-0955-43e2-8a59-03d99e80fa4a.png)</br>
 시간의 흐름에 따른 시간대별 승차 인원수의 패턴을 두시간 단위로 본 결과,</br>
 18~20ride의 값과 거의 유사한 패턴을 보이고 있습니다.</br>
-<p align="center"><img width="773" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png"></p>
+<p align="center"><img width="770" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png"></p>
 따라서 시간대별 승차인원수를 변수로 넣은 Feature1과 그렇지 않은 Feature2로 나누어 모델 결과를 비교하였습니다.</br>
 
 <br></br>
@@ -124,23 +124,24 @@ plot_model(만든 모델, plot = '플롯 정보')
 ```
 <br></br>
 ## (2) 사용한 모델 선정
-![image](https://user-images.githubusercontent.com/77037338/184921205-18706e90-be63-4359-b6dd-5f7b6570f338.png)</br>
-
+![image](https://user-images.githubusercontent.com/104780664/185572597-9ad99462-4dbd-4c73-b35d-2270765c07e8.png)</br>
 피쳐를 생성 후 오토머신러닝 라이브러리인 PyCaret을 이용하여 다양한 모델의 결과를 얻고, 이 중 RMSE 기준 Top3 모델을 뽑아 더 높은 성능을 가진 모델을 만들기 위해
 앙상블 모델을 만들었고, 이 때 블랜딩하는 방식은 앙상블 기법 중 소프트 보팅을 사용하였습니다. 이를 통해 나온 피쳐별 최종 모델의 성능을 비교하였습니다.</br>
 
 ## (3) 모델 성능 비교
 ### [1] Feature1 사용
-![image](https://user-images.githubusercontent.com/77037338/185044551-f714640c-bf07-4d67-b0b4-ff4ae21deb5b.png)</br>
+<p align="center"><img width="770" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575374-f7cc9301-dd4f-479b-a6e0-43a0236cc8f9.png"></p>
 RMSE를 기준으로 top3 모델(Catboost, RandomForestRegressor, LightGBM)이 선정되어 앙상블 모델을 만들었습니다.</br>
-![image](https://user-images.githubusercontent.com/77037338/185045250-da4a0821-5a74-4d16-a378-60e16ce3b89b.png)</br>
-![image](https://user-images.githubusercontent.com/77037338/185045315-adda1406-e798-4c04-b880-52663b147ba5.png)</br>
+
+![image](https://user-images.githubusercontent.com/104780664/185574685-d4c3960f-a1ac-4ce5-a802-4f9f4af67cd5.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185574720-8f90ce97-aad1-45e4-97ce-c70726842f8b.png)</br>
 
 ### [2] Feature2 사용
-![image](https://user-images.githubusercontent.com/77037338/185045429-9cbfb9cd-0816-4b09-a179-63ec6300a9dc.png)</br>
+<p align="center"><img width="770" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575929-c77be496-dd1d-4d2c-9b32-cf111752b071.png"></p>
 RMSE를 기준으로 top3 모델(RandomForestRegressor, Catboost, ExtraTrees)이 선정되어 앙상블 모델을 만들었습니다.</br>
-![image](https://user-images.githubusercontent.com/77037338/185045474-3666fc06-74cf-4b6b-95ee-2326bf24354f.png)</br>
-![image](https://user-images.githubusercontent.com/77037338/185045533-e1deb583-faaa-412e-b71d-be0117fb9691.png)</br>
+
+![image](https://user-images.githubusercontent.com/104780664/185574903-18a02d32-0a6f-451e-bee7-0d23f73fa507.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185574929-d2501722-34fc-484f-bc71-1843794e7f13.png)</br>
 
 <br></br>
 Feature1과 Feature2의 top3 모델들과 앙상블 모델의 잔차와 예측 에러를 비교한 결과, </br>
