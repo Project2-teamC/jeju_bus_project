@@ -69,7 +69,7 @@
 따라서 평일, 주말, 공휴일로 나눠서 컬럼을 생성하였습니다.</br>
 
 ### [4] 상관관계 분석 후 시간</br>
-![image](https://user-images.githubusercontent.com/104780664/185569001-17c7e4a9-cf09-44b4-a20c-dcbd0a61f788.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185571663-d305b6c1-7cf6-45cf-9a5f-fa061ef9567c.png)
 앞의 라인차트를 통해 승하차별로 서로 관련이 있을거 같다고 판단하여 승하차별 상관관계를 확인했습니다.</br>
 보시면 승차는 승차끼리 하차는 하차끼리 서로 상관관계가 있는걸로 보입니다. </br>
 저녁 6시에서 8시 사이의 승차 시간 즉, 예측하고자 하는 항목도 오전 시간대들과 상관관계가 있어보입니다.</br>
@@ -84,7 +84,7 @@
 ![image](https://user-images.githubusercontent.com/104780664/185569605-f52a0405-0955-43e2-8a59-03d99e80fa4a.png)</br>
 시간의 흐름에 따른 시간대별 승차 인원수의 패턴을 두시간 단위로 본 결과,</br>
 18~20ride의 값과 거의 유사한 패턴을 보이고 있습니다.</br>
-<center><img src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png" width="773" height="300"></center>
+<p align="center"><img width="773" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png"></p>
 따라서 시간대별 승차인원수를 변수로 넣은 Feature1과 그렇지 않은 Feature2로 나누어 모델 결과를 비교하였습니다.</br>
 
 <br></br>
