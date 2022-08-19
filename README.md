@@ -1,5 +1,4 @@
-# :bus: 제주 버스 승차인원 예측
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"></br>
+![image](https://user-images.githubusercontent.com/104780664/185581215-bf28776d-4729-4e76-ac6a-127b8e2cf6f2.png)</br>
 
 # 📑 목차
 * [1. 프로젝트 목표](#-1-프로젝트-목표)
@@ -21,13 +20,13 @@
 
 ----------
 # ⚾ 2. 기획 배경
-![image](https://user-images.githubusercontent.com/104780664/185564321-b5e5bd26-bddd-46ab-ad95-218077e7a140.png)</br>
-![image](https://user-images.githubusercontent.com/104780664/185564020-4368ab55-f41b-4b59-b3c1-202ab2cd6e23.png)</br>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185564321-b5e5bd26-bddd-46ab-ad95-218077e7a140.png"></p>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185564020-4368ab55-f41b-4b59-b3c1-202ab2cd6e23.png"></p>
 
 2021년 기준 제주특별자치도 내 주민등록세대수가 증감률은 다르지만 매년 꾸준히 증가하고 있습니다.</br>
 외국인, 외지인 방문객 수를 고려하면 전체 상주인구는 2019년 기준으로 일 평균 약 60만명 정도 됩니다.
 
-![image](https://user-images.githubusercontent.com/104780664/185564056-5a649a32-20ef-4029-9259-b63736089c54.png)</br>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185564056-5a649a32-20ef-4029-9259-b63736089c54.png"></p>
 
 이렇듯 제주도민과 외지인의 방문은 증가했으나,</br>
 2017년도 대중교통 개편이후에도 여전히 대중교통 이용자는 늘고 있지 않습니다.</br>
@@ -40,7 +39,7 @@
 ----------
 # 🔧 3. 데이터 소개
 ## (1) 데이터 수집
-![image](https://user-images.githubusercontent.com/104780664/185568757-1420504c-0f52-4b97-acab-d7f07469f88b.png)</br>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185576700-9440a8c9-9910-4ea9-80b2-65a6f473cbf8.png"></p>
 - 모델을 학습할 데이터 갯수 : 415,423 개 (2019년 9월1일 - 30일)
 - 예측에 이용할 데이터 갯수 : 228,170 개 (2019년 10월 1일 - 15일)
 
@@ -130,16 +129,18 @@ plot_model(만든 모델, plot = '플롯 정보')
 
 ## (3) 모델 성능 비교
 ### [1] Feature1 사용
-<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575374-f7cc9301-dd4f-479b-a6e0-43a0236cc8f9.png"></p></br>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575374-f7cc9301-dd4f-479b-a6e0-43a0236cc8f9.png"></p>
 RMSE를 기준으로 top3 모델(Catboost, RandomForestRegressor, LightGBM)이 선정되어 앙상블 모델을 만들었습니다.</br>
+
 ![image](https://user-images.githubusercontent.com/104780664/185574685-d4c3960f-a1ac-4ce5-a802-4f9f4af67cd5.png)</br>
 ![image](https://user-images.githubusercontent.com/104780664/185574720-8f90ce97-aad1-45e4-97ce-c70726842f8b.png)</br>
 
 ### [2] Feature2 사용
-<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575929-c77be496-dd1d-4d2c-9b32-cf111752b071.png"></p></br>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575929-c77be496-dd1d-4d2c-9b32-cf111752b071.png"></p>
 RMSE를 기준으로 top3 모델(RandomForestRegressor, Catboost, ExtraTrees)이 선정되어 앙상블 모델을 만들었습니다.</br>
-![image](https://user-images.githubusercontent.com/104780664/185574903-18a02d32-0a6f-451e-bee7-0d23f73fa507.png)</br>
-![image](https://user-images.githubusercontent.com/104780664/185574929-d2501722-34fc-484f-bc71-1843794e7f13.png)</br>
+
+![image](https://user-images.githubusercontent.com/104780664/185579505-5744afbf-7131-4492-bb29-a92d732f4268.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185579554-89b0e56a-0cda-4af0-9311-f0eac391da50.png)</br>
 
 <br></br>
 Feature1과 Feature2의 top3 모델들과 앙상블 모델의 잔차와 예측 에러를 비교한 결과, </br>
@@ -149,8 +150,9 @@ Feature1과 Feature2의 top3 모델들과 앙상블 모델의 잔차와 예측 �
 
 ### [3] Feature1과 Feature2에 사용된 최종 모델 비교
 이 둘의 모델들을 비교해보면, 다음과 같습니다.</br>
-![image](https://user-images.githubusercontent.com/77037338/185049815-ccc307b0-72fb-493a-a8fe-20b74e033b5c.png)</br>
-![image](https://user-images.githubusercontent.com/77037338/185055191-d3337e1b-4c61-4acf-95cc-61127fce3bc0.png)</br>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185579381-7b597ecb-6e55-408c-afed-453e08887cd9.png"></p>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185579196-ef283416-cf54-468e-8400-d58a3620da21.png"></p>
+
 앞서 본 결과(잔차, 예측 에러)에서 100명 이상일 경우, 예측 오류가 더 많이 나는 것을 확인 할 수 있습니다. 이는 데이터에 100 이상일 때 이상치가 존재한다고 판단해볼 수 있습니다.</br>
 따라서 이상치에 민감한 MSE 값보다 MAE와 MSE의 중간 민감도를 가진 RMSE와 R2(결정계수)를 기준으로 두 모델을 비교하였습니다.</br>
 결과적으로 Feature2와 그에 따른 앙상블 모델이 더 좋은 모델이라고 평가할 수 있었습니다.</br>
@@ -162,7 +164,7 @@ Feature1과 Feature2의 top3 모델들과 앙상블 모델의 잔차와 예측 �
 # ❗ 5. 결론 및 한계, 보완 방법
 ## (1) 결론
 Feature별로 중요도를 판단하기 위해 각 모델별로 중요도 그래프를 그려보았습니다.</br>
-![image](https://user-images.githubusercontent.com/77037338/185056654-d31783ec-7b36-480b-a2e1-57d782d1aab0.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185579702-8d0315f1-489b-4e3a-a1cd-155dbcddb1e5.png)</br>
 이때, bus_route_id(노선정보)가 18~20시에 승차한 인원수에 가장 높은 중요도를 보여주고 있습니다.</br>
 이는 버스 노선에 따라 승객수에 영향을 줄 수 있으므로 노선별의 개선이 필요할 것이라고 보여집니다.</br>
 ![image](https://user-images.githubusercontent.com/77037338/185057596-09e01cef-1739-4300-ab24-8b017d312fa7.png)</br>
