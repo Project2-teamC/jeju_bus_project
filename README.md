@@ -29,7 +29,8 @@
 
 ![image](https://user-images.githubusercontent.com/104780664/185564056-5a649a32-20ef-4029-9259-b63736089c54.png)</br>
 
-이렇듯 제주도민과 외지인의 방문은 증가했으나, 2017년도 대중교통 개편이후에도 여전히 대중교통 이용자는 늘고 있지 않습니다.</br>
+이렇듯 제주도민과 외지인의 방문은 증가했으나,</br>
+2017년도 대중교통 개편이후에도 여전히 대중교통 이용자는 늘고 있지 않습니다.</br>
 이에 따라 제주도청은 4차 대중교통 계획을 발표했으며 그 중 한 가지는 버스 수단 분담률 상승입니다.</br>
 낮은 버스 수단 분담률의 이유는 이용자 부문에서는 버스 배차, 버스내 혼잡 등을 불편사항으로 지적되었습니다. </br>
 저희는 이용자의 측면에서 바라보고 불편사항을 개선하는데 도움이 되고자 이 프로젝트가 시작되었습니다. </br>
@@ -39,7 +40,7 @@
 ----------
 # 🔧 3. 데이터 소개
 ## (1) 데이터 수집
-![image](https://user-images.githubusercontent.com/77037338/184811301-09cca29b-5c3c-4d68-b800-6afb41d3d265.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185568757-1420504c-0f52-4b97-acab-d7f07469f88b.png)</br>
 - 모델을 학습할 데이터 갯수 : 415,423 개 (2019년 9월1일 - 30일)
 - 예측에 이용할 데이터 갯수 : 228,170 개 (2019년 10월 1일 - 15일)
 
@@ -55,34 +56,35 @@
 시간 외의 다른 고려사항들에 대해서 확인하고 전처리를 한 부분도 알아보겠습니다.</br>
 
 ### [2] 날씨(비/ 여부)</br>
-![image](https://user-images.githubusercontent.com/77037338/184814163-8eb8bd88-1708-4e6f-8c82-6789e9d08db6.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185568937-c97227eb-6b30-4745-a2ed-52c2ce391234.png)</br>
 추가할 항목은 버스를 안 탄다면 왜 안탈까? 언제 안타고 싶을까?에 초점이 맞춰졌습니다. </br>
 팀 의견을 모았을 때, 비가 오면 대중교통을 이용하는게 싫어진다는 의견을 바탕으로 비가 오는 날과,</br>
 제주 지역 특성상 태풍의 영향을 받기 쉬우므로 추가로 함께 확인 해보았습니다.</br> 
 
 ### [3] 평일, 주말, 공휴일</br>
-![image](https://user-images.githubusercontent.com/77037338/184814558-e33aac4f-6c50-43df-b758-bd95ed77153b.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185569248-83fe0e34-b99a-4197-bcfb-b4c044ec41b0.png)</br>
 또 다른 요소로 주말이나 공휴일에는 버스를 타기보다 집에 있고 싶다는 의견을 바탕으로,</br>
 시간대를 나우어 날짜별로 승객수를 라인차트로 확인했습니다. </br>
 보시다시피 평일 대비 주말과 공휴일에서 낮은 승하차를 보여주고 있음을 확인했습니다.</br>
 따라서 평일, 주말, 공휴일로 나눠서 컬럼을 생성하였습니다.</br>
 
 ### [4] 상관관계 분석 후 시간</br>
+![image](https://user-images.githubusercontent.com/104780664/185569001-17c7e4a9-cf09-44b4-a20c-dcbd0a61f788.png)</br>
 앞의 라인차트를 통해 승하차별로 서로 관련이 있을거 같다고 판단하여 승하차별 상관관계를 확인했습니다.</br>
 보시면 승차는 승차끼리 하차는 하차끼리 서로 상관관계가 있는걸로 보입니다. </br>
 저녁 6시에서 8시 사이의 승차 시간 즉, 예측하고자 하는 항목도 오전 시간대들과 상관관계가 있어보입니다.</br>
 
 ### [5] 지리적 특성</br>
-![image](https://user-images.githubusercontent.com/77037338/184818055-fc5b0ac1-e80b-4e53-b86a-7c801379b1d0.png)</br>
-![image](https://user-images.githubusercontent.com/77037338/184818826-0f44af98-07e7-4cf1-918b-314ec043dffb.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185569066-3161b221-c3af-4263-b0f4-d2c2980afe70.png)</br>
 지리적으로 관계가 없을까 생각을 해봤습니다.</br>
 제주도를 사등분하여 각 측정소별로 정류소와의 거리를 계산한 결과들을 측정소 항목별로 입력해주었습니다. 
 그리고 위도 경도 데이터를 통해 제주시와 서귀포시를 기준으로 버스정류소가 얼마나 분포되어 있는지를 확인해보기 위해 컬럼을 생성해주었습니다. </br>
 
 ### [6] 사용된 Feature</br>
-![image](https://user-images.githubusercontent.com/77037338/185042393-826a6bb0-940d-4732-bbcf-f42f4c647f7e.png)</br>
-시간의 흐름에 따른 시간대별 승차 인원수의 패턴을 두시간 단위로 본 결과, 18~20ride의 값과 거의 유사한 패턴을 보이고 있습니다.</br>
-![image](https://user-images.githubusercontent.com/77037338/185042064-ede4543b-da9a-43bd-9982-8ed28efe3248.png)</br>
+![image](https://user-images.githubusercontent.com/104780664/185569605-f52a0405-0955-43e2-8a59-03d99e80fa4a.png)</br>
+시간의 흐름에 따른 시간대별 승차 인원수의 패턴을 두시간 단위로 본 결과,</br>
+18~20ride의 값과 거의 유사한 패턴을 보이고 있습니다.</br>
+<center><img src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png" width="773" height="300"></center>
 따라서 시간대별 승차인원수를 변수로 넣은 Feature1과 그렇지 않은 Feature2로 나누어 모델 결과를 비교하였습니다.</br>
 
 <br></br>
