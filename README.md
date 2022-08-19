@@ -84,7 +84,7 @@
 ![image](https://user-images.githubusercontent.com/104780664/185569605-f52a0405-0955-43e2-8a59-03d99e80fa4a.png)</br>
 시간의 흐름에 따른 시간대별 승차 인원수의 패턴을 두시간 단위로 본 결과,</br>
 18~20ride의 값과 거의 유사한 패턴을 보이고 있습니다.</br>
-<p align="center"><img width="770" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png"></p>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185570091-3b2d34ef-e2f4-46ca-a08c-3a225451ed48.png"></p>
 따라서 시간대별 승차인원수를 변수로 넣은 Feature1과 그렇지 않은 Feature2로 나누어 모델 결과를 비교하였습니다.</br>
 
 <br></br>
@@ -130,16 +130,14 @@ plot_model(만든 모델, plot = '플롯 정보')
 
 ## (3) 모델 성능 비교
 ### [1] Feature1 사용
-<p align="center"><img width="770" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575374-f7cc9301-dd4f-479b-a6e0-43a0236cc8f9.png"></p>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575374-f7cc9301-dd4f-479b-a6e0-43a0236cc8f9.png"></p></br>
 RMSE를 기준으로 top3 모델(Catboost, RandomForestRegressor, LightGBM)이 선정되어 앙상블 모델을 만들었습니다.</br>
-
 ![image](https://user-images.githubusercontent.com/104780664/185574685-d4c3960f-a1ac-4ce5-a802-4f9f4af67cd5.png)</br>
 ![image](https://user-images.githubusercontent.com/104780664/185574720-8f90ce97-aad1-45e4-97ce-c70726842f8b.png)</br>
 
 ### [2] Feature2 사용
-<p align="center"><img width="770" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575929-c77be496-dd1d-4d2c-9b32-cf111752b071.png"></p>
+<p align="center"><img width="700" alt="pairplot" src="https://user-images.githubusercontent.com/104780664/185575929-c77be496-dd1d-4d2c-9b32-cf111752b071.png"></p></br>
 RMSE를 기준으로 top3 모델(RandomForestRegressor, Catboost, ExtraTrees)이 선정되어 앙상블 모델을 만들었습니다.</br>
-
 ![image](https://user-images.githubusercontent.com/104780664/185574903-18a02d32-0a6f-451e-bee7-0d23f73fa507.png)</br>
 ![image](https://user-images.githubusercontent.com/104780664/185574929-d2501722-34fc-484f-bc71-1843794e7f13.png)</br>
 
